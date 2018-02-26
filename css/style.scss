@@ -1,0 +1,126 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext');
+$grey: #3c3942;
+$accent-color: #bedd4b;
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: darken($grey,10%);
+    color: lighten($grey,50%);
+}
+a:link, a:visited {
+    color: inherit;
+}
+a:active, a:hover, a:focus {
+    color: white;
+}
+.widget {
+    color: inherit;
+    display: block;    
+    margin: 3vmin;
+    padding: 5vmin;
+    background-color: $grey;
+    border-radius: 5px;
+    h1 {
+        text-transform: uppercase;
+    }
+    footer {
+        font-size: 0.875em;
+    }
+
+}
+
+.io-containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > * {
+        padding: .35em 0;
+        width: 100%;
+    }
+}
+.button-container {
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+label {
+    display: none;
+}
+
+%form-elements {
+    font-size: 1.5em;
+    line-height: 1;
+    font-weight: 700;
+    color: $grey;
+    display: block;
+    padding: 0 .5em;
+    border: none;
+    border-radius: 4px;
+    min-height: 2em;
+    margin: 0.25em 0;
+}
+input {
+    @extend %form-elements;
+    text-align: right;
+    width: 100%;
+    cursor: text;
+}
+.faded {
+    background-color: lighten($grey,30%);
+    cursor: not-allowed;
+}
+select {
+    @extend %form-elements;
+    display: block;
+    float: right;
+    text-align: right;
+    -webkit-appearance: menulist-button;
+}
+button {
+    @extend %form-elements;
+    font-size: 1.25em;
+    padding: .7em 2em;
+    background-color: $accent-color;
+    cursor: pointer;
+    width: 100%;
+}
+.arrow {
+    transform: scale(2);
+    width: auto;
+}
+#warning span {
+    display: block;
+    background-color: #fff;
+    border: 2px solid red;
+    color: red;
+    font-weight: 700;
+    padding: 0.5em;
+}
+
+@media (min-width: 30em) {
+    .io-containers {
+        & > [class$=container] {
+            display: flex;
+            width: 100%;
+        }
+    }
+    .button-container {
+        width: auto;
+    }
+    select {
+        margin-left: 0.5em;
+    }
+    
+    
+}
+
+@media (min-width: 40em) {
+    .widget {
+        max-width: 40em;
+        margin: 2em auto;
+    }
+}

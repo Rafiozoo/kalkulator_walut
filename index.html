@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kalkulator Walut</title>
+  <meta name="description" content="Prosty kalkulator wybranych walut na API Fixer.io" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="widget">
+        <div class="wrapper">
+
+            <h1>Kalkulator walut</h1>
+            <p class="info">Proszę wpisać kwotę oraz wybrać waluty.</p>
+            <p id="warning"></p>
+
+            <div class="io-containers">
+
+                <div class="input-container">
+                    <label for="input-amount">Kwota (wprowadzona):</label>
+                    <input id="input-amount" placeholder="0.00" autofocus>
+                    <!-- type="number" wyłączony dla większej spójności działania JS w przeglądarkach, szczególnie IE10+ i Edge -->
+        
+                    <label for="input-currency">Przelicz z waluty:</label>
+                    <select id="input-currency" onchange="convert();">
+                        <option title="Złoty polski" value="PLN" selected>PLN</option>
+                        <option title="Euro" value="EUR">EUR</option>
+                        <option title="Dolar amerykański" value="USD">USD</option>
+                        <option title="Funt brytyjski" value="GBP">GBP</option>
+                        <option title="Korona islandzka" value="ISK">ISK</option>
+                    </select>
+                </div>
+                <!-- /.input-container -->
+    
+                <div class="arrow">&#8595;</div>
+        
+                <div class="output-container">
+                    <label for="output-amount">Kwota (po obliczeniu):</label>
+                    <input id="output-amount" readonly class=" faded">
+                    <label for="output-currency">Przelicz na walutę:</label>
+                    <select id="output-currency" onchange="convert();">
+                        <option title="Złoty polski" value="PLN">PLN</option>
+                        <option title="Euro" value="EUR" selected>EUR</option>
+                        <option title="Dolar amerykański" value="USD">USD</option>
+                        <option title="Funt brytyjski" value="GBP">GBP</option>
+                        <option title="Korona islandzka" value="ISK">ISK</option>
+                    </select>
+                </div>
+                <!-- /.output-container -->
+            </div>
+
+            <div class="button-container">
+                <button onclick="convert();">Przelicz</button>
+            </div>
+            <!-- /.button-container -->
+
+    
+            <footer>Najświeższy kurs <span id="rate-date"></span> dzięki <a href="http://fixer.io/" title="Foreign exchange rates and currency conversion API">fixer.io</a></footer>
+
+        </div>
+    </main>
+    <!-- /.widget-wrapper -->
+
+    <script src="js/scripts.js"></script>
+  
+</body>
+</html>
