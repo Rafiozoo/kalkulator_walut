@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Kalkulator Walut</title>
   <meta name="description" content="Prosty kalkulator wybranych walut na API Fixer.io" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"> -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
 
                 <div class="input-container">
                     <label for="input-amount">Kwota (wprowadzona):</label>
-                    <input id="input-amount" placeholder="0.00" autofocus>
+                    <input id="input-amount" placeholder="0.00" autofocus autocomplete="off" onkeyup="clearOutput()">
                     <!-- type="number" wyłączony dla większej spójności działania JS w przeglądarkach, szczególnie IE10+ i Edge -->
         
                     <label for="input-currency">Przelicz z waluty:</label>

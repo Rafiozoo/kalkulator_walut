@@ -1,5 +1,8 @@
 
+@import 'mixins';
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext');
+
+// Variables
 $grey: #3c3942;
 $accent-color: #bedd4b;
 
@@ -20,8 +23,8 @@ a:active, a:hover, a:focus {
 .widget {
     color: inherit;
     display: block;    
-    margin: 3vmin;
-    padding: 5vmin;
+    margin: 3%;
+    padding: 5%;
     background-color: $grey;
     border-radius: 5px;
     h1 {
@@ -34,9 +37,9 @@ a:active, a:hover, a:focus {
 }
 
 .io-containers {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(center);
     & > * {
         padding: .35em 0;
         width: 100%;
@@ -104,7 +107,7 @@ button {
 @media (min-width: 30em) {
     .io-containers {
         & > [class$=container] {
-            display: flex;
+            @include flexbox;
             width: 100%;
         }
     }
@@ -113,9 +116,7 @@ button {
     }
     select {
         margin-left: 0.5em;
-    }
-    
-    
+    }  
 }
 
 @media (min-width: 40em) {

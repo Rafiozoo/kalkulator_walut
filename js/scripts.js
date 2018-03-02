@@ -65,3 +65,10 @@ function convert() {
         document.getElementById("rate-date").innerHTML = " z dnia " + rateDate + ", ";
     }
 }
+
+function clearOutput() {  
+    var outputAmount = document.getElementById("output-amount");
+    // Wyczyszczenie pola wyniku
+    outputAmount.value = "";
+}
+
