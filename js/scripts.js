@@ -34,6 +34,10 @@ function convert() {
         justdoit(); 
     }
 
+    // Ustawienie fokusu na input wejściowy
+    document.getElementById("input-amount").focus();
+    
+
     function justdoit() {
         document.getElementById("warning").innerHTML = "";
         

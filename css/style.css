@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext");
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -17,11 +18,22 @@ a:active, a:hover, a:focus {
   color: white;
 }
 
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+}
+
 .widget {
   color: inherit;
   display: block;
-  margin: 3vmin;
-  padding: 5vmin;
+  margin: 3%;
+  padding: 5%;
   background-color: #3c3942;
   border-radius: 5px;
 }
@@ -35,9 +47,16 @@ a:active, a:hover, a:focus {
 }
 
 .io-containers {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .io-containers > * {
@@ -48,10 +67,6 @@ a:active, a:hover, a:focus {
 .button-container {
   margin-bottom: 2em;
   width: 100%;
-}
-
-label {
-  display: none;
 }
 
 input, select, button {
@@ -94,7 +109,9 @@ button {
 }
 
 .arrow {
-  transform: scale(2);
+  -webkit-transform: scale(2);
+      -ms-transform: scale(2);
+          transform: scale(2);
   width: auto;
 }
 
@@ -109,6 +126,8 @@ button {
 
 @media (min-width: 30em) {
   .io-containers > [class$=container] {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
   }

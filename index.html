@@ -7,7 +7,7 @@
   <title>Kalkulator Walut</title>
   <meta name="description" content="Prosty kalkulator wybranych walut na API Fixer.io" />
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"> -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
     <main class="widget">
@@ -20,11 +20,11 @@
             <div class="io-containers">
 
                 <div class="input-container">
-                    <label for="input-amount">Kwota (wprowadzona):</label>
+                    <label for="input-amount" class="visuallyhidden">Kwota (wprowadzona):</label>
                     <input id="input-amount" placeholder="0.00" autofocus autocomplete="off" onkeyup="clearOutput()">
                     <!-- type="number" wyłączony dla większej spójności działania JS w przeglądarkach, szczególnie IE10+ i Edge -->
         
-                    <label for="input-currency">Przelicz z waluty:</label>
+                    <label for="input-currency" class="visuallyhidden">Przelicz z waluty:</label>
                     <select id="input-currency" onchange="convert();">
                         <option title="Złoty polski" value="PLN" selected>PLN</option>
                         <option title="Euro" value="EUR">EUR</option>
@@ -38,9 +38,9 @@
                 <div class="arrow">&#8595;</div>
         
                 <div class="output-container">
-                    <label for="output-amount">Kwota (po obliczeniu):</label>
+                    <label for="output-amount" class="visuallyhidden">Kwota (po obliczeniu):</label>
                     <input id="output-amount" readonly class=" faded">
-                    <label for="output-currency">Przelicz na walutę:</label>
+                    <label for="output-currency" class="visuallyhidden">Przelicz na walutę:</label>
                     <select id="output-currency" onchange="convert();">
                         <option title="Złoty polski" value="PLN">PLN</option>
                         <option title="Euro" value="EUR" selected>EUR</option>
@@ -53,7 +53,7 @@
             </div>
 
             <div class="button-container">
-                <button onclick="convert();">Przelicz</button>
+                <button type="submit" onclick="convert();">Przelicz</button>
             </div>
             <!-- /.button-container -->
 

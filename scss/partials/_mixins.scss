@@ -1,0 +1,7 @@
+// I don't use prefixes, besause have set autoprefixer while compiling
+// "> 0.1%", "last 3 versions"
+
+// scale
+@mixin scale($scale) {
+  transform: scale($scale);
+}
